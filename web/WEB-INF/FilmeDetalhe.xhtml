@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Detalhe de Filme</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>DETALHE DE UM FILME</h1>
+            
+            <table>
+                <tbody>
+                    <tr>
+                        <td> <h:outputLabel value="CÓDIGO:"/> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.idfilme}"/> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="TITULO"/> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.titulo}"/>  </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="DESCRIÇÃO" /> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.descricao}" /> </td>
+                    </tr>
+                </tbody>
+                    <tr>
+                        <td> <h:outputLabel value="PREÇO"/> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.descricao}" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="ANO DE LANÇAMENTO"/> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.lancamento}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:outputLabel> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="IDIOMA" /> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.idioma}" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="IDIOMA ORIGINAL" /> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.idioma_original}" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="TEMPO DE LOCAÇÃO" /> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.locacao}" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="PREÇO" /> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.preco}" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="DURAÇÃO DO FILME" /> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.filme}" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="CUSTO DE SUBSTITUIÇÃO" /> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.substituicao}" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="CLASSIFICAÇÃO" /> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.classificacao}" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="RECURSOS ESPECIAIS" /> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.recursos}" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="ULTIMA ATUALIZAÇÃO" /> </td>
+                        <td> <h:outputLabel value="#{filmeController.filme.atualizacao}" /> </td>
+                    </tr>
+            </table>
+            <br/>
+            <h:commandButton value="Voltar" style="width: 48%" action="voltaParaListagem" />
+            <h:commandButton value="Editar" style="width: 48%" action="vaiParaEditar"/>                             
+            
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="Css.css" />
+        <title>Listagem Filme</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>LISTAGEM DOS FILMES</h1>
+            <h:commandButton value="VOLTAR" style="width: 95%" action="voltaParaIndex"/>
+            <h:commandButton value="NOVO FILME" style="width: 95%" action="#{filmeController.prepararInclusao()}" />
+            <br/>
+            
+            <h:dataTable style="width: 95%"
+                         var="umfilm"
+                         value="#{filmeController.filmes}"
+                         border="1"
+                         rowClasses="amarelo,azul"
+                         headerClass="cabecalho">
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="CÓDIGO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.idfime}"/>                    
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="TITULO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.titulo}"/>                    
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="DESCRIÇÃO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.descricao}">
+                        
+                    </h:outputLabel>                   
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="ANO DE LANÇAMENTO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.lancamento}">
+                        <f:convertDateTime pattern="dd/MM/yyy" />
+                    </h:outputLabel>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="IDIOMA"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.idioma}">
+                        
+                    </h:outputLabel> 
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="IDIOMA ORIGINAL"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.idioma_original}">
+                        
+                    </h:outputLabel>                   
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="TEMPO DE LOCAÇÃO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.locacao}">
+                        
+                    </h:outputLabel>                   
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="PREÇO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.preco}">
+                        
+                    </h:outputLabel>                   
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="DURAÇÃO DO FILME"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.duracao}">
+                        
+                    </h:outputLabel>                   
+                </h:column>   
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="CUSTO DE SUBSTITUIÇÃO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.substituicao}">
+                        
+                    </h:outputLabel>                   
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="CLASSIFICAÇÃO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.classificacao}">
+                        
+                    </h:outputLabel>                   
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="RECURSOS ESPECIAIS"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.recursos}">
+                        
+                    </h:outputLabel>                   
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="ULTIMA ATUALIZAÇÃO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{umFilm.atualizacao}">
+                        
+                    </h:outputLabel>                   
+                </h:column>
+                
+               <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="AÇÃO"/>
+                    </f:facet>
+                    
+                    <h:commandLink value="Detalhe" action="vaiParaDetalhe">
+                        <f:setPropertyActionListener target="#{filmeController.filme}" value="#{umFilm}" />
+                    </h:commandLink>
+                    
+                    <h:outputLabel value="|"/>
+                    <h:commandLink value="Editar" action="vaiParaEditar">
+                        <f:setPropertyActionListener target="#{filmeController.filme}" value="#{umFilm}" />
+                    </h:commandLink>
+                    
+                    
+                    <h:outputLabel value="|"/>
+                    
+                    <h:commandLink value="Deletar" action="#{filmeController.finalizaDelecao()}">
+                        <f:setPropertyActionListener target="#{filmeController.filme}" value="#{umFilm}"/>
+                    </h:commandLink>
+                                      
+                </h:column>
+                
+            </h:dataTable>
+            
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Inclusão de Filme</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>INCLUSÃO DE NOVO FILME</h1>
+            
+            <table>
+                <tbody>
+                    <tr>
+                        <td> <h:outputLabel value="TITULO"/> </td>
+                        <td> <h:inputText value="#{filmeController.filme.titulo}" maxlength="255" size="80" />  </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="DESCRIÇÃO" /> </td>
+                        <td> <h:inputText value="#{filmeController.filme.descricao}" maxlength="255" size="90" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="ANO DE LANÇAMENTO"/> </td>
+                        <td> <h:inputText value="#{filmeController.filme.lancamento}" maxlength="10" size="40">
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:inputText> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="IDIOMA" /> </td>
+                        <td> <h:inputText value="#{filmeController.filme.idioma}" maxlength="255" size="90" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="IDIOMA ORIGINAL" /> </td>
+                        <td> <h:inputText value="#{filmeController.filme.idioma_original}" maxlength="255" size="90" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="TEMPO DE LOCAÇÃO" /> </td>
+                        <td> <h:inputText value="#{filmeController.filme.idioma_original}" maxlength="255" size="90" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="PREÇO"/> </td>
+                        <td> <h:inputText value="#{filmeController.filme.preco}" maxlength="13" size="40" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="DURAÇÃO DO FILME" /> </td>
+                        <td> <h:inputText value="#{filmeController.filme.duracao}" maxlength="255" size="90" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="CUSTO DE SUBSTITUIÇÃO" /> </td>
+                        <td> <h:inputText value="#{filmeController.filme.substituicao}" maxlength="255" size="90" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="CLASSIFICAÇÃO" /> </td>
+                        <td> <h:inputText value="#{filmeController.filme.classificacao}" maxlength="255" size="90" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="RECURSOS ESPECIAIS" /> </td>
+                        <td> <h:inputText value="#{filmeController.filme.recursos}" maxlength="255" size="90" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="ULTIMA ATUALIZAÇÃO" /> </td>
+                        <td> <h:inputText value="#{filmeController.filme.atualizacao}" maxlength="255" size="90" /> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <h:commandButton value="Voltar" style="width: 48%" action="voltaParaListagem" />
+            <h:commandButton value="Gravar" style="width: 48%" action="#{filmeController.finalizaInclusao()}" />
+            
+        </h:form>
+    </h:body>
+</html>
+
